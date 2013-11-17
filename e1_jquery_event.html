@@ -57,9 +57,36 @@
 		<script src="javascript/jquery-1.10.2.min.js"></script>
 		<script>
 			//muy importante incluir la siguiente linea:
-			$(function() {			
+			$(function() {	
+				var pagina = $(document);
+				pagina.keypress(function(evento){
+					var log = $("#log");
+					log.html("se oprimio una tecla" + String.fromCharCode(evento.which));
+					
+				});
+				
+				
+				var imagen =$("#imagen");
+				imagen.click(function(evento){
+					var log = $("#log");
+					log.html("posicion x:" + evento.pageX + "posicion y:" + evento.pageY + ", boton:" + evento.which);
+				});	
 
 			});
+			
+			
+			imagen.mousedown(function(){
+				var log = $("#log");
+				//$("#log").html("mousedown ocurrio");
+			});
+			
+			
+			imagen.mouseup(function(){
+				var log = $("#log");
+				//log.html("mouseup ocurrio");
+			});
+			
+			
 		</script>
 	</head>
 	<body>

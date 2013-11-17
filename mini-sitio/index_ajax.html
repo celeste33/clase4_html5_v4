@@ -7,6 +7,31 @@
 		<script src="../javascript/jquery-1.10.2.min.js"></script>
 		<script>
 			$(function() {
+				$("#blog").click(function(){
+					$("#contenedor").load("ajax/blog.txt",function(respuesta,estatus,xhr){
+						if(estatus == "error"){
+							alert("ocurrio un error " + xhr.statusText );
+						}
+					});
+					
+					
+					return false;
+				});
+				
+				$("#acerca").click(function(){
+					$("#contenedor").load("ajax/acerca.txt");
+					return false;
+				});
+				
+				$("#fotos").click(function(){
+					$("#contenedor").load("ajax/fotos.txt");
+					return false;
+				});
+				
+				$("#principal").click(function(){
+					$("#contenedor").load("ajax/index.txt");
+					return false;
+				});
 
 
 			});
